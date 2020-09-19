@@ -1,6 +1,7 @@
 /* Main definitions */
 body {
   font-size: 16px;
+  font-family: 'Oswald', 'Space Mono';
 }
 
 /* https://css-tricks.com/almanac/properties/s/scrollbar/ */
