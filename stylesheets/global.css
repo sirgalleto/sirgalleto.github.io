@@ -1,11 +1,11 @@
 /* Main definitions */
 body {
   font-size: 16px;
-  font-family: 'Oswald', 'Space Mono';
+  font-family: "Oswald", "Space Mono";
 }
 
 /* https://css-tricks.com/almanac/properties/s/scrollbar/ */
 ::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; 
+  width: 0px;
+  background: transparent;
 }

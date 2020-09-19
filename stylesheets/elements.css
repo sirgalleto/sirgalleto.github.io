@@ -1,10 +1,10 @@
-.gtx-title { 
-  font-family: 'Oswald';
+.gtx-title {
+  font-family: "Oswald";
   font-size: 2em;
   text-transform: uppercase;
 }
 
-.gtx-title--main { 
+.gtx-title--main {
   width: 400px;
   font-size: 4em;
   font-weight: 300;
@@ -13,10 +13,9 @@
 }
 
 .gtx-text {
-
 }
 
 .gtx-text--hightlight {
   color: black;
-  background: linear-gradient(0deg, white 46%,transparent 46%);
+  background: linear-gradient(0deg, white 46%, transparent 46%);
 }
