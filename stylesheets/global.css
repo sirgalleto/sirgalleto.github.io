@@ -1,0 +1,10 @@
+/* Main definitions */
+body {
+  font-size: 16px;
+}
+
+/* https://css-tricks.com/almanac/properties/s/scrollbar/ */
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; 
+}

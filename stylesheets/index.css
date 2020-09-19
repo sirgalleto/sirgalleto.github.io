@@ -1,0 +1,7 @@
+@import "./reset.css"; /* Reset custom browser initial styles to start from cero  */
+@import "./fonts.css"; /* Load fonts first */
+@import "./global.css"; /* Global styles */
+@import "./elements.css"; /* Where the re-usable elements on it's atomic form are placed */
+@import "./blocks.css"; /* Where the re-usable blocks on it's container form are placed  */
+@import "./intersection.css"; /* Where blocks and elements live together */
+

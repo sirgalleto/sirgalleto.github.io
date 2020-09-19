@@ -1,0 +1,42 @@
+.gtx-section {
+    z-index: 10;
+    background-color: transparent;
+    background:
+    /* TODO: Fix hacky implementation of dots */
+    radial-gradient(
+      circle,
+      rgb(193, 192, 192),
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent
+    );
+    
+    background-size: calc(100vh/30) calc(100vh/30);
+}
+
+.gtx-section > * {
+  z-index: 100;
+}
+
+.gtx-section--primary {
+  background-color: rgb(93, 62, 247, 1);  
+  width: 100vw;
+  height: 100vh;
+}
+
+.gtx-navbar--clampt {
+  display: none;
+}
