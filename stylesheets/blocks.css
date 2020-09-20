@@ -28,16 +28,21 @@
     transparent
   );
 
-  background-size: calc(100vh / 20) calc(100vh / 20);
+  background-size: calc(100vw / 25) calc(100vw / 25);
 }
 
 .gtx-section > * {
   z-index: 100;
-  padding: 120px 85px;
+  padding: 50px 110px;
 }
 
 .gtx-section--primary {
+  padding-top: 120px;
+  width: 100vw;
   background-color: rgb(93, 62, 247, 1);
+}
+
+.gtx-section--page {
   width: 100vw;
   height: 100vh;
 }
@@ -61,7 +66,7 @@
   font-size: 1em;
   color: rgb(26, 18, 58);
   font-family: "Space mono";
-  font-weight: 500;
+  font-weight: 700;
   text-decoration: none;
   margin: 0 22px 0 22px;
 }
@@ -72,4 +77,85 @@
 
 .gtx-navbar__options li > a:visited {
   color: none;
+}
+
+.gtx-intro {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gtx-text {
+  font-weight: 400;
+  line-height: 2em;
+  font-family: "Space Mono";
+  font-size: 1em;
+  color: white;
+}
+
+/* 
+  gtx-project-box 
+  __container
+  __index
+  __tag
+  __title
+*/
+
+.gtx-project-box__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gtx-project-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 27px 0 27px;
+  height: 33vw;
+  margin-right: 45px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-bottom: solid 18px white;
+  /* TODO: use this as anchor */
+  cursor: pointer;
+}
+
+.gtx-project-box:last-child {
+  margin-right: 0;
+}
+
+.gtx-project-box:nth-child(2n) {
+  margin-top: 15%;
+}
+
+.gtx-project-box:nth-child(3n) {
+  margin-top: 5%;
+}
+
+.gtx-project-box__index {
+  align-self: flex-end;
+  width: 10px;
+  font-family: "Space Mono";
+  font-size: 1.2em;
+  font-weight: 700;
+  line-height: 1.5em;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.gtx-project-box__tag {
+  font-family: "Space Mono";
+  font-size: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #1b133c;
+}
+
+.gtx-project-box__title {
+  margin: 13px 0 44px 0;
+  font-family: "Oswald";
+  font-size: 2.5em;
+  line-height: 1.2em;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: white;
+  width: 70%;
 }

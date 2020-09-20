@@ -9,3 +9,16 @@ body {
   width: 0px;
   background: transparent;
 }
+
+a {
+  font-weight: 700;
+  color: #1b133c;
+}
+
+a:hover {
+  color: white;
+}
+
+a::visited {
+  color: white;
+}

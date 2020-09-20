@@ -1,16 +1,38 @@
+/* 
+  gtx-title 
+  --main
+
+  Interacts with sections.
+*/
+
 .gtx-title {
-  font-family: "Oswald";
-  font-size: 2em;
+  font-weight: 700;
+  font-family: "Space mono";
   text-transform: uppercase;
 }
 
 .gtx-title--main {
-  width: 400px;
+  font-family: "Oswald";
+  font-size: 2em;
+  max-width: 400px;
   font-size: 4em;
   font-weight: 300;
   line-height: 1.2em;
   color: white;
 }
+
+.gtx-section--primary .gtx-title {
+  color: white;
+}
+
+.gtx-section--secondary .gtx-title {
+  color: #5d3ef7;
+}
+
+/* 
+  gtx-text 
+  --hightlight
+*/
 
 .gtx-text {
 }
@@ -20,6 +42,7 @@
   background: linear-gradient(0deg, white 46%, transparent 46%);
 }
 
+/* gtx-logo */
 .gtx-logo {
   max-height: 68px;
 }
