@@ -5,7 +5,7 @@
     window.helpers.renderTemplate("header", "header");
     window.helpers.renderTemplate("footer", "footer");
 
-    const projectName = getUrlParam("project");
+    const projectName = window.helpers.getUrlParam("project");
     const currentProject = window.projects.find(
       ({ name }) => name === projectName
     );
@@ -19,10 +19,9 @@
         }
       })
       .then((readme) => {
-        const converter = new showdown.Converter(),
-          html = converter.makeHtml(readme);
+        const html = new showdown.Converter().makeHtml(readme);
 
-        renderTemplate("project-details", "projectDetails", {
+        window.helpers.renderTemplate("project-details", "projectDetails", {
           projectReadme: html,
         });
       })
