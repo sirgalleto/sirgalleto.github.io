@@ -23,4 +23,10 @@ function renderTemplate(id, name, ctx) {
   element.outerHTML = template(ctx);
 }
 
+function increment(value, options) {
+  return parseInt(value) + 1;
+}
+
+// Export each helper on it's needed context
+Handlebars.registerHelper("increment", increment);
 window.renderTemplate = renderTemplate;

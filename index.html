@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./stylesheets/index.css" />
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.runtime.js"></script>
     <script src="public/templates/templates.precompiled.js"></script>
+    <script type="text/javascript" src="public/data/projects.js"></script>
     <script type="text/javascript" src="public/scripts/helpers.js"></script>
     <script type="text/javascript" src="public/scripts/index.js"></script>
   </head>
@@ -31,23 +32,7 @@
     </section>
     <section class="gtx-section gtx-section--primary">
       <h1 class="gtx-title">Recent projects</h1>
-      <div class="gtx-project-box__container">
-        <div class="gtx-project-box">
-          <aside class="gtx-project-box__index">/ 1</aside>
-          <span class="gtx-project-box__tag">CLI</span>
-          <h2 class="gtx-project-box__title">Hue Screen Ambiance</h2>
-        </div>
-        <div class="gtx-project-box">
-          <aside class="gtx-project-box__index">/ 2</aside>
-          <span class="gtx-project-box__tag">CLI</span>
-          <h2 class="gtx-project-box__title">Hue Screen Ambiance</h2>
-        </div>
-        <div class="gtx-project-box">
-          <aside class="gtx-project-box__index">/ 3</aside>
-          <span class="gtx-project-box__tag">CLI</span>
-          <h2 class="gtx-project-box__title">Hue Screen Ambiance</h2>
-        </div>
-      </div>
+      <template id="recent-projects"></template>
     </section>
 
     <section class="gtx-section gtx-section--secondary gtx-section--overflow">
