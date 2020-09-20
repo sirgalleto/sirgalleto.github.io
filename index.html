@@ -9,28 +9,14 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./stylesheets/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.runtime.js"></script>
+    <script src="public/templates/templates.precompiled.js"></script>
+    <script type="text/javascript" src="public/scripts/helpers.js"></script>
+    <script type="text/javascript" src="public/scripts/index.js"></script>
   </head>
   <body>
     <section class="gtx-section gtx-section--primary">
-      <header>
-        <nav class="gtx-navbar gtx-navbar--primary">
-          <img src="public/galleto.png" alt="Galleto" class="gtx-logo" />
-          <ul class="gtx-navbar__options">
-            <li>
-              <a href="./projects.html"> Projects</a>
-            </li>
-            <li>
-              <a href="./thoughts.html"> Thoughts</a>
-            </li>
-            <li>
-              <a href="./photos.html"> Photos</a>
-            </li>
-            <li>
-              <a href="./contact.html"> Contact</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <template id="header"></template>
       <div class="gtx-intro">
         <h1 class="gtx-title gtx-title--main">
           Self Learner & Passionate <i class="gtx-text--hightlight">coder</i>
@@ -125,31 +111,6 @@
       </div>
     </section>
 
-    <footer class="gtx-section gtx-section--primary gtx-section--footer">
-      <img
-        src="public/galleto-isotype-white.png"
-        alt="Galleto isotype"
-        class="gtx-isotype"
-      />
-      <span class="gtx-text gtx-text--right gtx-unmargin">
-        © 2020. All rights reserved.Galleto
-      </span>
-      <div class="gtx-flex-container gtx-flex-column gtx-unmargin">
-        <span class="gtx-text">Become a friend</span>
-        <nav class="gtx-navbar gtx-navbar--footer">
-          <ul class="gtx-navbar__options">
-            <li>
-              <a href="https://twitter.com/sirgalleto">Twitter</a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/sirgalleto/">Instagram</a>
-            </li>
-            <li>
-              <a href="http://github.com/sirgalleto/"> Github</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </footer>
+    <template id="footer"></template>
   </body>
 </html>
