@@ -38,3 +38,7 @@
   text-decoration: none;
   color: none;
 }
+
+.gtx-relative {
+  position: relative;
+}

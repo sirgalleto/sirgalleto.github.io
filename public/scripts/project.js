@@ -23,6 +23,7 @@
 
         window.helpers.renderTemplate("project-details", "projectDetails", {
           projectReadme: html,
+          project: currentProject,
         });
       })
       .catch((error) => {
