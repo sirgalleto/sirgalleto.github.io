@@ -1,6 +1,7 @@
 /* 
   .gtx-section
   --primary
+  --small
   --page
   --footer
 */
@@ -42,6 +43,12 @@
   width: 100%;
   padding-top: 50px;
   padding-bottom: 200px;
+}
+
+.gtx-section--small {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 100px;
 }
 
 .gtx-section > * {
