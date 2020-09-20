@@ -5,7 +5,6 @@
 
   Interacts with sections.
 */
-
 .gtx-title {
   margin-bottom: 38px;
   font-weight: 700;
@@ -44,8 +43,13 @@
   gtx-text 
   --hightlight
 */
-
 .gtx-text {
+  width: 40%;
+  font-weight: 300;
+  line-height: 2em;
+  font-family: "Space Mono";
+  font-size: 1.2em;
+  color: white;
 }
 
 .gtx-text--hightlight {

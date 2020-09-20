@@ -1,3 +1,9 @@
+/* 
+  .gtx-section
+  --primary
+  --page
+*/
+
 .gtx-section {
   z-index: 10;
   background-color: transparent;
@@ -51,6 +57,11 @@
   height: 100vh;
 }
 
+/* 
+  .gtx-navbar
+  __options
+*/
+
 .gtx-navbar {
   height: 68px;
   display: flex;
@@ -82,19 +93,14 @@
   color: none;
 }
 
+/* 
+  .gtx-intro
+*/
+
 .gtx-intro {
   display: flex;
   justify-content: space-between;
   padding-top: 200px;
-}
-
-.gtx-text {
-  width: 40%;
-  font-weight: 300;
-  line-height: 2em;
-  font-family: "Space Mono";
-  font-size: 1.2em;
-  color: white;
 }
 
 /* 
@@ -122,6 +128,14 @@
   border-bottom: solid 18px white;
   /* TODO: use this as anchor */
   cursor: pointer;
+}
+
+.gtx-project-box:hover {
+  border-color: rgba(26, 18, 58, 0.9);
+}
+
+.gtx-project-box:hover > .gtx-project-box__index {
+  color: rgba(26, 18, 58, 0.9);
 }
 
 .gtx-project-box:last-child {
