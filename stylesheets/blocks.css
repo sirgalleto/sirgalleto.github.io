@@ -2,6 +2,7 @@
   .gtx-section
   --primary
   --page
+  --footer
 */
 
 .gtx-section {
@@ -40,7 +41,7 @@
 .gtx-section {
   width: 100%;
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 200px;
 }
 
 .gtx-section > * {
@@ -53,13 +54,26 @@
   background-color: rgb(93, 62, 247, 1);
 }
 
+.gtx-section--overflow + .gtx-section {
+  margin-top: -360px;
+  padding-top: 300px;
+}
+
 .gtx-section--page {
   height: 100vh;
+}
+
+.gtx-section--footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 /* 
   .gtx-navbar
   __options
+  --footer
 */
 
 .gtx-navbar {
@@ -85,12 +99,33 @@
   margin: 0 22px 0 22px;
 }
 
+.gtx-navbar__options li > a:first-child {
+  margin-left: 0;
+}
+
 .gtx-navbar__options li > a:hover {
   color: white;
+  text-decoration: underline overline;
 }
 
 .gtx-navbar__options li > a:visited {
   color: none;
+}
+
+.gtx-navbar--footer {
+  justify-content: flex-start;
+}
+
+.gtx-navbar--footer > .gtx-navbar__options {
+  align-items: flex-end;
+}
+
+.gtx-navbar--footer > .gtx-navbar__options li > a {
+  font-weight: 300;
+  font-family: "Space Mono";
+  line-height: 2em;
+  font-size: 1.2em;
+  color: white;
 }
 
 /* 

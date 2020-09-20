@@ -2,6 +2,10 @@
   display: flex;
 }
 
+.gtx-flex-left {
+  justify-content: safe;
+}
+
 .gtx-flex-row {
   flex-direction: row;
 }
@@ -16,4 +20,12 @@
 
 .gtx-flex-column--reverse {
   flex-direction: column-reverse;
+}
+
+.gtx-unmargin {
+  margin-left: 0;
+}
+
+.gtx-block {
+  display: block;
 }
