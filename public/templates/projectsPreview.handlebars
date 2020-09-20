@@ -1,9 +1,9 @@
 <div class="gtx-project-box__container">
   {{#each projects }}
-      <div class="gtx-project-box">
+      <a class="gtx-project-box" href="#">
       <aside class="gtx-project-box__index">/ {{increment @index}}</aside>
       <span class="gtx-project-box__tag">{{type}}</span>
       <h2 class="gtx-project-box__title">{{name}}</h2>
-    </div>
+    </a>
   {{/each}}
 </div>

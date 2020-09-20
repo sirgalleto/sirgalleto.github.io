@@ -14,13 +14,13 @@ templates['projectsPreview'] = template({"1":function(container,depth0,helpers,p
         return undefined
     };
 
-  return "      <div class=\"gtx-project-box\">\n      <aside class=\"gtx-project-box__index\">/ "
+  return "      <a class=\"gtx-project-box\" href=\"#\">\n      <aside class=\"gtx-project-box__index\">/ "
     + alias3((lookupProperty(helpers,"increment")||(depth0 && lookupProperty(depth0,"increment"))||alias2).call(alias1,(data && lookupProperty(data,"index")),{"name":"increment","hash":{},"data":data,"loc":{"start":{"line":4,"column":46},"end":{"line":4,"column":66}}}))
     + "</aside>\n      <span class=\"gtx-project-box__tag\">"
     + alias3(((helper = (helper = lookupProperty(helpers,"type") || (depth0 != null ? lookupProperty(depth0,"type") : depth0)) != null ? helper : alias2),(typeof helper === alias4 ? helper.call(alias1,{"name":"type","hash":{},"data":data,"loc":{"start":{"line":5,"column":41},"end":{"line":5,"column":49}}}) : helper)))
     + "</span>\n      <h2 class=\"gtx-project-box__title\">"
     + alias3(((helper = (helper = lookupProperty(helpers,"name") || (depth0 != null ? lookupProperty(depth0,"name") : depth0)) != null ? helper : alias2),(typeof helper === alias4 ? helper.call(alias1,{"name":"name","hash":{},"data":data,"loc":{"start":{"line":6,"column":41},"end":{"line":6,"column":49}}}) : helper)))
-    + "</h2>\n    </div>\n";
+    + "</h2>\n    </a>\n";
 },"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
