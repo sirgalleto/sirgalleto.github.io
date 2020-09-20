@@ -1,11 +1,13 @@
 /* 
   gtx-title 
   --main
+  --quote
 
   Interacts with sections.
 */
 
 .gtx-title {
+  margin-bottom: 38px;
   font-weight: 700;
   font-family: "Space mono";
   text-transform: uppercase;
@@ -13,12 +15,19 @@
 
 .gtx-title--main {
   font-family: "Oswald";
-  font-size: 2em;
-  max-width: 400px;
-  font-size: 4em;
-  font-weight: 300;
+  font-size: 5em;
+  max-width: 500px;
+  font-weight: 500;
   line-height: 1.2em;
   color: white;
+}
+
+.gtx-title--quote {
+  font-family: "Oswald";
+  font-size: 4em;
+  font-weight: 400;
+  line-height: 1.2em;
+  color: black !important;
 }
 
 .gtx-section--primary .gtx-title {

@@ -31,25 +31,28 @@
   background-size: calc(100vw / 25) calc(100vw / 25);
 }
 
+.gtx-section {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
 .gtx-section > * {
-  z-index: 100;
-  padding: 50px 110px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 .gtx-section--primary {
   padding-top: 120px;
-  width: 100vw;
   background-color: rgb(93, 62, 247, 1);
 }
 
 .gtx-section--page {
-  width: 100vw;
   height: 100vh;
 }
 
 .gtx-navbar {
   height: 68px;
-  width: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -82,13 +85,15 @@
 .gtx-intro {
   display: flex;
   justify-content: space-between;
+  padding-top: 200px;
 }
 
 .gtx-text {
-  font-weight: 400;
+  width: 40%;
+  font-weight: 300;
   line-height: 2em;
   font-family: "Space Mono";
-  font-size: 1em;
+  font-size: 1.2em;
   color: white;
 }
 
