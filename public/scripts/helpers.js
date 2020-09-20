@@ -27,6 +27,21 @@ function increment(value, options) {
   return parseInt(value) + 1;
 }
 
+function pickFirstThree(value, options) {
+  const [first, second, third] = value;
+  return [first, second, third];
+}
+
+function getUrlParam(key) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(key);
+}
+
+window.helpers = {
+  renderTemplate,
+  getUrlParam,
+  pickFirstThree,
+};
 // Export each helper on it's needed context
 Handlebars.registerHelper("increment", increment);
-window.renderTemplate = renderTemplate;
+Handlebars.registerHelper("pickFirstThree", increment);

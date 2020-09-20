@@ -3,17 +3,17 @@ const projects = `[
   {
     "name": "memory-usage-webpack-plugin",
     "type": "Webpack Plugin",
-    "readme": "https://raw.githubusercontent.com/sirgalleto/crypto-notifier/master/README.md"
+    "readme": "https://raw.githubusercontent.com/sirgalleto/memory-usage-webpack-plugin/base/README.md"
   },
   { 
     "name": "prs-vemos-rolas-no-sabemos",
     "type": "Git Hook",
-    "readme": "https://github.com/sirgalleto/prs-vemos-rolas-no-sabemos"
+    "readme": "https://raw.githubusercontent.com/sirgalleto/prs-vemos-rolas-no-sabemos/master/README.md"
   },
   {
     "name": "navajitas bot",
     "type": "Twitter Bot",
-    "readme": "https://github.com/sirgalleto/navajitasbot"
+    "readme": "https://raw.githubusercontent.com/sirgalleto/navajitasbot/master/README.md"
   }
 ]`;
 

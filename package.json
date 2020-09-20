@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel index.html",
+    "dev": "parcel *.html",
     "precompile-templates": "handlebars public/templates/*.handlebars -f public/templates/templates.precompiled.js"
   },
   "author": "Sebastián Osorio <svzosorio@gmail.com>",

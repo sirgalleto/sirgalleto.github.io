@@ -1,9 +1,9 @@
 (function () {
   window.onload = function () {
-    renderTemplate("header", "header");
-    renderTemplate("footer", "footer");
-    renderTemplate("recent-projects", "projectsPreview", {
-      projects: window.projects,
+    window.helpers.renderTemplate("header", "header");
+    window.helpers.renderTemplate("footer", "footer");
+    window.helpers.renderTemplate("recent-projects", "projectsPreview", {
+      projects: window.helpers.pickFirstThree(window.projects),
     });
   };
 })();

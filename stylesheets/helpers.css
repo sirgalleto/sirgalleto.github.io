@@ -29,3 +29,12 @@
 .gtx-block {
   display: block;
 }
+
+.gtx-invisible-anchor:hover {
+  text-decoration: none;
+}
+
+.gtx-invisible-anchor:visite {
+  text-decoration: none;
+  color: none;
+}
