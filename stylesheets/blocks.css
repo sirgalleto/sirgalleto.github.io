@@ -4,7 +4,12 @@
   background:
     /* TODO: Fix hacky implementation of dots */ radial-gradient(
     circle,
-    rgb(193, 192, 192),
+    rgba(193, 192, 192, 0.4),
+    transparent,
+    transparent,
+    transparent,
+    transparent,
+    transparent,
     transparent,
     transparent,
     transparent,
@@ -23,11 +28,12 @@
     transparent
   );
 
-  background-size: calc(100vh / 30) calc(100vh / 30);
+  background-size: calc(100vh / 20) calc(100vh / 20);
 }
 
 .gtx-section > * {
   z-index: 100;
+  padding: 120px 85px;
 }
 
 .gtx-section--primary {
@@ -36,6 +42,34 @@
   height: 100vh;
 }
 
-.gtx-navbar--clampt {
-  display: none;
+.gtx-navbar {
+  height: 68px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.gtx-navbar__options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.gtx-navbar__options li > a {
+  margin: 5px;
+  font-size: 1em;
+  color: rgb(26, 18, 58);
+  font-family: "Space mono";
+  font-weight: 500;
+  text-decoration: none;
+  margin: 0 22px 0 22px;
+}
+
+.gtx-navbar__options li > a:hover {
+  color: white;
+}
+
+.gtx-navbar__options li > a:visited {
+  color: none;
 }
