@@ -3,3 +3,4 @@
 @import "./elements.css"; /* Where the re-usable elements on it's atomic form are placed */
 @import "./blocks.css"; /* Where the re-usable blocks on it's container form are placed  */
 @import "./intersection.css"; /* Where blocks and elements live together */
+@import "./helpers.css"; /* Re-usable components that are not attatch to style logic */

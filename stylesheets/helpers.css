@@ -1,0 +1,19 @@
+.gtx-flex-container {
+  display: flex;
+}
+
+.gtx-flex-row {
+  flex-direction: row;
+}
+
+.gtx-flex-row--reverse {
+  flex-direction: row-reverse;
+}
+
+.gtx-flex-column {
+  flex-direction: column;
+}
+
+.gtx-flex-column--reverse {
+  flex-direction: column-reverse;
+}

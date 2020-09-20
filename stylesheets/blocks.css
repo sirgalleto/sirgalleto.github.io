@@ -166,3 +166,50 @@
   color: white;
   width: 70%;
 }
+
+/* 
+  gtx-photo-grid 
+  gtx-photo-grid__squirifier
+*/
+
+.gtx-photo-grid {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.gtx-photo-grid:first-child {
+  margin-right: 50px;
+}
+
+/* Hacky trick from https://codepen.io/ItScofield/pen/PNVZoQ */
+.gtx-photo-grid__square {
+  flex: 1 1 calc(50% - 50px);
+  max-width: calc(50% - 25px);
+  position: relative;
+  margin-top: 50px;
+}
+
+.gtx-photo-grid__square--full {
+  flex: 1 1 100%;
+  max-width: none;
+  margin-right: 0;
+}
+
+.gtx-photo-grid__square:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+.gtx-photo-grid__square img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
