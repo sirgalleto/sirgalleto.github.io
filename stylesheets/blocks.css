@@ -128,6 +128,11 @@
   color: white;
 }
 
+.gtx-navbar--footer > .gtx-navbar__options li > a:hover {
+  color: rgb(26, 18, 58);
+  font-weight: 700;
+}
+
 /* 
   .gtx-intro
 */
