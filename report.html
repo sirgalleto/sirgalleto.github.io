@@ -2,831 +2,37 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Report</title>
-    <style>
-      /* webkit printing magic: print all background colors */
-      html {
-        -webkit-print-color-adjust: exact;
-      }
-      * {
-        box-sizing: border-box;
-        -webkit-print-color-adjust: exact;
-      }
-
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-      }
-      @media only screen {
-        body {
-          margin: 2em auto;
-          max-width: 900px;
-          color: rgb(55, 53, 47);
-        }
-      }
-
-      body {
-        line-height: 1.5;
-        white-space: pre-wrap;
-      }
-
-      a,
-      a.visited {
-        color: inherit;
-        text-decoration: underline;
-      }
-
-      .pdf-relative-link-path {
-        font-size: 80%;
-        color: #444;
-      }
-
-      h1,
-      h2,
-      h3 {
-        letter-spacing: -0.01em;
-        line-height: 1.2;
-        font-weight: 600;
-        margin-bottom: 0;
-      }
-
-      .page-title {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-top: 0;
-        margin-bottom: 0.75em;
-      }
-
-      h1 {
-        font-size: 1.875rem;
-        margin-top: 1.875rem;
-      }
-
-      h2 {
-        font-size: 1.5rem;
-        margin-top: 1.5rem;
-      }
-
-      h3 {
-        font-size: 1.25rem;
-        margin-top: 1.25rem;
-      }
-
-      .source {
-        border: 1px solid #ddd;
-        border-radius: 3px;
-        padding: 1.5em;
-        word-break: break-all;
-      }
-
-      .callout {
-        border-radius: 3px;
-        padding: 1rem;
-      }
-
-      figure {
-        margin: 1.25em 0;
-        page-break-inside: avoid;
-      }
-
-      figcaption {
-        opacity: 0.5;
-        font-size: 85%;
-        margin-top: 0.5em;
-      }
-
-      mark {
-        background-color: transparent;
-      }
-
-      .indented {
-        padding-left: 1.5em;
-      }
-
-      hr {
-        background: transparent;
-        display: block;
-        width: 100%;
-        height: 1px;
-        visibility: visible;
-        border: none;
-        border-bottom: 1px solid rgba(55, 53, 47, 0.09);
-      }
-
-      img {
-        max-width: 100%;
-      }
-
-      @media only print {
-        img {
-          max-height: 100vh;
-          object-fit: contain;
-        }
-      }
-
-      @page {
-        margin: 1in;
-      }
-
-      .collection-content {
-        font-size: 0.875rem;
-      }
-
-      .column-list {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .column {
-        padding: 0 1em;
-      }
-
-      .column:first-child {
-        padding-left: 0;
-      }
-
-      .column:last-child {
-        padding-right: 0;
-      }
-
-      .table_of_contents-item {
-        display: block;
-        font-size: 0.875rem;
-        line-height: 1.3;
-        padding: 0.125rem;
-      }
-
-      .table_of_contents-indent-1 {
-        margin-left: 1.5rem;
-      }
-
-      .table_of_contents-indent-2 {
-        margin-left: 3rem;
-      }
-
-      .table_of_contents-indent-3 {
-        margin-left: 4.5rem;
-      }
-
-      .table_of_contents-link {
-        text-decoration: none;
-        opacity: 0.7;
-        border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-      }
-
-      table,
-      th,
-      td {
-        border: 1px solid rgba(55, 53, 47, 0.09);
-        border-collapse: collapse;
-      }
-
-      table {
-        border-left: none;
-        border-right: none;
-      }
-
-      th,
-      td {
-        font-weight: normal;
-        padding: 0.25em 0.5em;
-        line-height: 1.5;
-        min-height: 1.5em;
-        text-align: left;
-      }
-
-      th {
-        color: rgba(55, 53, 47, 0.6);
-      }
-
-      ol,
-      ul {
-        margin: 0;
-        margin-block-start: 0.6em;
-        margin-block-end: 0.6em;
-      }
-
-      li > ol:first-child,
-      li > ul:first-child {
-        margin-block-start: 0.6em;
-      }
-
-      ul > li {
-        list-style: disc;
-      }
-
-      ul.to-do-list {
-        text-indent: -1.7em;
-      }
-
-      ul.to-do-list > li {
-        list-style: none;
-      }
-
-      .to-do-children-checked {
-        text-decoration: line-through;
-        opacity: 0.375;
-      }
-
-      ul.toggle > li {
-        list-style: none;
-      }
-
-      ul {
-        padding-inline-start: 1.7em;
-      }
-
-      ul > li {
-        padding-left: 0.1em;
-      }
-
-      ol {
-        padding-inline-start: 1.6em;
-      }
-
-      ol > li {
-        padding-left: 0.2em;
-      }
-
-      .mono ol {
-        padding-inline-start: 2em;
-      }
-
-      .mono ol > li {
-        text-indent: -0.4em;
-      }
-
-      .toggle {
-        padding-inline-start: 0em;
-        list-style-type: none;
-      }
-
-      /* Indent toggle children */
-      .toggle > li > details {
-        padding-left: 1.7em;
-      }
-
-      .toggle > li > details > summary {
-        margin-left: -1.1em;
-      }
-
-      .selected-value {
-        display: inline-block;
-        padding: 0 0.5em;
-        background: rgba(206, 205, 202, 0.5);
-        border-radius: 3px;
-        margin-right: 0.5em;
-        margin-top: 0.3em;
-        margin-bottom: 0.3em;
-        white-space: nowrap;
-      }
-
-      .collection-title {
-        display: inline-block;
-        margin-right: 1em;
-      }
-
-      time {
-        opacity: 0.5;
-      }
-
-      .icon {
-        display: inline-block;
-        max-width: 1.2em;
-        max-height: 1.2em;
-        text-decoration: none;
-        vertical-align: text-bottom;
-        margin-right: 0.5em;
-      }
-
-      img.icon {
-        border-radius: 3px;
-      }
-
-      .user-icon {
-        width: 1.5em;
-        height: 1.5em;
-        border-radius: 100%;
-        margin-right: 0.5rem;
-      }
-
-      .user-icon-inner {
-        font-size: 0.8em;
-      }
-
-      .text-icon {
-        border: 1px solid #000;
-        text-align: center;
-      }
-
-      .page-cover-image {
-        display: block;
-        object-fit: cover;
-        width: 100%;
-        height: 30vh;
-      }
-
-      .page-header-icon {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-      }
-
-      .page-header-icon-with-cover {
-        margin-top: -0.72em;
-        margin-left: 0.07em;
-      }
-
-      .page-header-icon img {
-        border-radius: 3px;
-      }
-
-      .link-to-page {
-        margin: 1em 0;
-        padding: 0;
-        border: none;
-        font-weight: 500;
-      }
-
-      p > .user {
-        opacity: 0.5;
-      }
-
-      td > .user,
-      td > time {
-        white-space: nowrap;
-      }
-
-      input[type="checkbox"] {
-        transform: scale(1.5);
-        margin-right: 0.6em;
-        vertical-align: middle;
-      }
-
-      p {
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
-      }
-
-      .image {
-        border: none;
-        margin: 1.5em 0;
-        padding: 0;
-        border-radius: 0;
-        text-align: center;
-      }
-
-      .code,
-      code {
-        background: rgba(135, 131, 120, 0.15);
-        border-radius: 3px;
-        padding: 0.2em 0.4em;
-        border-radius: 3px;
-        font-size: 85%;
-        tab-size: 2;
-      }
-
-      code {
-        color: #eb5757;
-      }
-
-      .code {
-        padding: 1.5em 1em;
-      }
-
-      .code-wrap {
-        white-space: pre-wrap;
-        word-break: break-all;
-      }
-
-      .code > code {
-        background: none;
-        padding: 0;
-        font-size: 100%;
-        color: inherit;
-      }
-
-      blockquote {
-        font-size: 1.25em;
-        margin: 1em 0;
-        padding-left: 1em;
-        border-left: 3px solid rgb(55, 53, 47);
-      }
-
-      .bookmark {
-        text-decoration: none;
-        max-height: 8em;
-        padding: 0;
-        display: flex;
-        width: 100%;
-        align-items: stretch;
-      }
-
-      .bookmark-title {
-        font-size: 0.85em;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        height: 1.75em;
-        white-space: nowrap;
-      }
-
-      .bookmark-text {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .bookmark-info {
-        flex: 4 1 180px;
-        padding: 12px 14px 14px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-
-      .bookmark-image {
-        width: 33%;
-        flex: 1 1 180px;
-        display: block;
-        position: relative;
-        object-fit: cover;
-        border-radius: 1px;
-      }
-
-      .bookmark-description {
-        color: rgba(55, 53, 47, 0.6);
-        font-size: 0.75em;
-        overflow: hidden;
-        max-height: 4.5em;
-        word-break: break-word;
-      }
-
-      .bookmark-href {
-        font-size: 0.75em;
-        margin-top: 0.25em;
-      }
-
-      .sans {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-          "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji",
-          "Segoe UI Symbol";
-      }
-      .code {
-        font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo,
-          Courier, monospace;
-      }
-      .serif {
-        font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho",
-          "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC",
-          "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif;
-      }
-      .mono {
-        font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
-      }
-      .pdf .sans {
-        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji",
-          "Segoe UI Symbol", "Twemoji", "Noto Color Emoji", "Noto Sans CJK SC",
-          "Noto Sans CJK KR";
-      }
-
-      .pdf .code {
-        font-family: Source Code Pro, "SFMono-Regular", Consolas,
-          "Liberation Mono", Menlo, Courier, monospace, "Twemoji",
-          "Noto Color Emoji", "Noto Sans Mono CJK SC", "Noto Sans Mono CJK KR";
-      }
-
-      .pdf .serif {
-        font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho",
-          "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC",
-          "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif,
-          "Twemoji", "Noto Color Emoji", "Noto Sans CJK SC", "Noto Sans CJK KR";
-      }
-
-      .pdf .mono {
-        font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace,
-          "Twemoji", "Noto Color Emoji", "Noto Sans Mono CJK SC",
-          "Noto Sans Mono CJK KR";
-      }
-
-      .highlight-default {
-      }
-      .highlight-gray {
-        color: rgb(155, 154, 151);
-      }
-      .highlight-brown {
-        color: rgb(100, 71, 58);
-      }
-      .highlight-orange {
-        color: rgb(217, 115, 13);
-      }
-      .highlight-yellow {
-        color: rgb(223, 171, 1);
-      }
-      .highlight-teal {
-        color: rgb(15, 123, 108);
-      }
-      .highlight-blue {
-        color: rgb(11, 110, 153);
-      }
-      .highlight-purple {
-        color: rgb(105, 64, 165);
-      }
-      .highlight-pink {
-        color: rgb(173, 26, 114);
-      }
-      .highlight-red {
-        color: rgb(224, 62, 62);
-      }
-      .highlight-gray_background {
-        background: rgb(235, 236, 237);
-      }
-      .highlight-brown_background {
-        background: rgb(233, 229, 227);
-      }
-      .highlight-orange_background {
-        background: rgb(250, 235, 221);
-      }
-      .highlight-yellow_background {
-        background: rgb(251, 243, 219);
-      }
-      .highlight-teal_background {
-        background: rgb(221, 237, 234);
-      }
-      .highlight-blue_background {
-        background: rgb(221, 235, 241);
-      }
-      .highlight-purple_background {
-        background: rgb(234, 228, 242);
-      }
-      .highlight-pink_background {
-        background: rgb(244, 223, 235);
-      }
-      .highlight-red_background {
-        background: rgb(251, 228, 228);
-      }
-      .block-color-default {
-        color: inherit;
-        fill: inherit;
-      }
-      .block-color-gray {
-        color: rgba(55, 53, 47, 0.6);
-        fill: rgba(55, 53, 47, 0.6);
-      }
-      .block-color-brown {
-        color: rgb(100, 71, 58);
-        fill: rgb(100, 71, 58);
-      }
-      .block-color-orange {
-        color: rgb(217, 115, 13);
-        fill: rgb(217, 115, 13);
-      }
-      .block-color-yellow {
-        color: rgb(223, 171, 1);
-        fill: rgb(223, 171, 1);
-      }
-      .block-color-teal {
-        color: rgb(15, 123, 108);
-        fill: rgb(15, 123, 108);
-      }
-      .block-color-blue {
-        color: rgb(11, 110, 153);
-        fill: rgb(11, 110, 153);
-      }
-      .block-color-purple {
-        color: rgb(105, 64, 165);
-        fill: rgb(105, 64, 165);
-      }
-      .block-color-pink {
-        color: rgb(173, 26, 114);
-        fill: rgb(173, 26, 114);
-      }
-      .block-color-red {
-        color: rgb(224, 62, 62);
-        fill: rgb(224, 62, 62);
-      }
-      .block-color-gray_background {
-        background: rgb(235, 236, 237);
-      }
-      .block-color-brown_background {
-        background: rgb(233, 229, 227);
-      }
-      .block-color-orange_background {
-        background: rgb(250, 235, 221);
-      }
-      .block-color-yellow_background {
-        background: rgb(251, 243, 219);
-      }
-      .block-color-teal_background {
-        background: rgb(221, 237, 234);
-      }
-      .block-color-blue_background {
-        background: rgb(221, 235, 241);
-      }
-      .block-color-purple_background {
-        background: rgb(234, 228, 242);
-      }
-      .block-color-pink_background {
-        background: rgb(244, 223, 235);
-      }
-      .block-color-red_background {
-        background: rgb(251, 228, 228);
-      }
-      .select-value-color-default {
-        background-color: rgba(206, 205, 202, 0.5);
-      }
-      .select-value-color-gray {
-        background-color: rgba(155, 154, 151, 0.4);
-      }
-      .select-value-color-brown {
-        background-color: rgba(140, 46, 0, 0.2);
-      }
-      .select-value-color-orange {
-        background-color: rgba(245, 93, 0, 0.2);
-      }
-      .select-value-color-yellow {
-        background-color: rgba(233, 168, 0, 0.2);
-      }
-      .select-value-color-green {
-        background-color: rgba(0, 135, 107, 0.2);
-      }
-      .select-value-color-blue {
-        background-color: rgba(0, 120, 223, 0.2);
-      }
-      .select-value-color-purple {
-        background-color: rgba(103, 36, 222, 0.2);
-      }
-      .select-value-color-pink {
-        background-color: rgba(221, 0, 129, 0.2);
-      }
-      .select-value-color-red {
-        background-color: rgba(255, 0, 26, 0.2);
-      }
-
-      .checkbox {
-        display: inline-flex;
-        vertical-align: text-bottom;
-        width: 16;
-        height: 16;
-        background-size: 16px;
-        margin-left: 2px;
-        margin-right: 5px;
-      }
-
-      .checkbox-on {
-        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-      }
-
-      .checkbox-off {
-        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
-      }
-    </style>
   </head>
   <body>
-    <article id="cca5080c-2585-4877-bdf7-076d3b54578c" class="page sans">
-      <header>
-        <h1 class="page-title">Report</h1>
-        <table class="properties">
-          <tbody>
-            <tr class="property-row property-row-select">
-              <th>
-                <span class="icon property-icon"
-                  ><svg
-                    viewBox="0 0 14 14"
-                    style="
-                      width: 14px;
-                      height: 14px;
-                      display: block;
-                      fill: rgba(55, 53, 47, 0.4);
-                      flex-shrink: 0;
-                      -webkit-backface-visibility: hidden;
-                    "
-                    class="typesSelect"
-                  >
-                    <path
-                      d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"
-                    ></path></svg></span
-                >Class
-              </th>
-              <td>
-                <span class="selected-value select-value-color-brown"
-                  >CM1040</span
-                >
-              </td>
-            </tr>
-            <tr class="property-row property-row-url">
-              <th>
-                <span class="icon property-icon"
-                  ><svg
-                    viewBox="0 0 14 14"
-                    style="
-                      width: 14px;
-                      height: 14px;
-                      display: block;
-                      fill: rgba(55, 53, 47, 0.4);
-                      flex-shrink: 0;
-                      -webkit-backface-visibility: hidden;
-                    "
-                    class="typesUrl"
-                  >
-                    <path
-                      d="M3.73333,3.86667 L7.46667,3.86667 C8.49613,3.86667 9.33333,4.70387 9.33333,5.73333 C9.33333,6.7628 8.49613,7.6 7.46667,7.6 L6.53333,7.6 C6.01813,7.6 5.6,8.0186 5.6,8.53333 C5.6,9.04807 6.01813,9.46667 6.53333,9.46667 L7.46667,9.46667 C9.5284,9.46667 11.2,7.79507 11.2,5.73333 C11.2,3.6716 9.5284,2 7.46667,2 L3.73333,2 C1.6716,2 0,3.6716 0,5.73333 C0,7.124 0.762067,8.33453 1.88953,8.97713 C1.87553,8.83107 1.86667,8.6836 1.86667,8.53333 C1.86667,7.92013 1.98753,7.33447 2.2036,6.7978 C1.99267,6.4954 1.86667,6.12953 1.86667,5.73333 C1.86667,4.70387 2.70387,3.86667 3.73333,3.86667 Z M12.1095,5.28907 C12.1231,5.4356 12.1333,5.58307 12.1333,5.73333 C12.1333,6.34607 12.0101,6.9294 11.7931,7.46513 C12.0059,7.768 12.1333,8.13573 12.1333,8.53333 C12.1333,9.5628 11.2961,10.4 10.2667,10.4 L6.53333,10.4 C5.50387,10.4 4.66667,9.5628 4.66667,8.53333 C4.66667,7.50387 5.50387,6.66667 6.53333,6.66667 L7.46667,6.66667 C7.98187,6.66667 8.4,6.24807 8.4,5.73333 C8.4,5.2186 7.98187,4.8 7.46667,4.8 L6.53333,4.8 C4.4716,4.8 2.8,6.4716 2.8,8.53333 C2.8,10.59507 4.4716,12.2667 6.53333,12.2667 L10.2667,12.2667 C12.3284,12.2667 14,10.59507 14,8.53333 C14,7.14267 13.2375,5.93167 12.1095,5.28907 Z"
-                    ></path></svg></span
-                >Link
-              </th>
-              <td></td>
-            </tr>
-            <tr class="property-row property-row-select">
-              <th>
-                <span class="icon property-icon"
-                  ><svg
-                    viewBox="0 0 14 14"
-                    style="
-                      width: 14px;
-                      height: 14px;
-                      display: block;
-                      fill: rgba(55, 53, 47, 0.4);
-                      flex-shrink: 0;
-                      -webkit-backface-visibility: hidden;
-                    "
-                    class="typesSelect"
-                  >
-                    <path
-                      d="M7,13 C10.31348,13 13,10.31371 13,7 C13,3.68629 10.31348,1 7,1 C3.68652,1 1,3.68629 1,7 C1,10.31371 3.68652,13 7,13 Z M3.75098,5.32278 C3.64893,5.19142 3.74268,5 3.90869,5 L10.09131,5 C10.25732,5 10.35107,5.19142 10.24902,5.32278 L7.15771,9.29703 C7.07764,9.39998 6.92236,9.39998 6.84229,9.29703 L3.75098,5.32278 Z"
-                    ></path></svg></span
-                >Type
-              </th>
-              <td></td>
-            </tr>
-            <tr class="property-row property-row-multi_select">
-              <th>
-                <span class="icon property-icon"
-                  ><svg
-                    viewBox="0 0 14 14"
-                    style="
-                      width: 14px;
-                      height: 14px;
-                      display: block;
-                      fill: rgba(55, 53, 47, 0.4);
-                      flex-shrink: 0;
-                      -webkit-backface-visibility: hidden;
-                    "
-                    class="typesMultipleSelect"
-                  >
-                    <path
-                      d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"
-                    ></path></svg></span
-                >Week
-              </th>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </header>
+    <article class="page sans">
       <div class="page-body">
-        <h1 id="11a9a76c-c796-40e8-8e3f-ab33c00a1e61" class="">
-          Report Large Coursework
-        </h1>
-        <p id="7f6a55a8-7d89-497e-b27e-6c30e9917858" class="">
-          Carlos Sebastián Osorio Parada
-        </p>
-        <h1 id="ffef2986-c21e-40cc-b011-f484ea2116ed" class="">Introduction</h1>
-        <p id="6f5a1d4b-aa0f-4c98-9407-2c873f869b39" class="">
+        <h1>Report Large Coursework</h1>
+        <p>Carlos Sebastián Osorio Parada</p>
+        <h1>Introduction</h1>
+        <p>
           Galleto is my brand over the internet, and this brand represents what
           I believe: In the open divulgation of knowledge.
         </p>
-        <p id="7a9ae9a6-d786-4fd4-96f4-881c9c4b0de9" class="">
+        <p>
           I am a solid believer in the open-source and communities to increase
           the acceleration of the innovation in the technology field, especially
           in the software development side.
         </p>
-        <p id="511e02d1-ec84-44f4-b073-ef2535b23e11" class="">
-          Galleto has been part of:
-        </p>
-        <ol
-          id="b7640bf1-ebd9-403b-8a33-e1de51b728b8"
-          class="numbered-list"
-          start="1"
-        >
+        <p>Galleto has been part of:</p>
+        <ol>
           <li>GDLJS (the JS community in the city) leadership.</li>
         </ol>
-        <ol
-          id="2afcfe5d-c9fc-45bd-9145-ab38744101f8"
-          class="numbered-list"
-          start="2"
-        >
+        <ol>
           <li>GDLDevComs + Posadev conf.</li>
         </ol>
-        <ol
-          id="d279c96b-9e7e-46b4-9e8e-2d70b425562b"
-          class="numbered-list"
-          start="3"
-        >
+        <ol>
           <li>NodeConfEU 2010.</li>
         </ol>
-        <p id="3a0aeb1d-4fa8-4bab-b51e-f458a2311f8e" class="">
+        <p>
           Some of the things I want to communicate to the world
           about <strong>Galleto</strong>:
         </p>
-        <ul id="e6341e44-b4ab-4fec-8ad1-ec55d66da8ba" class="bulleted-list">
+        <ul class="bulleted-list">
           <li>
             Who I am: There is one practical reason why it is essential to show
             the people I am from Latin America. Latin American people usually
@@ -834,48 +40,44 @@
             more development.
           </li>
         </ul>
-        <ul id="35466a17-a878-404f-8504-c53da60847f1" class="bulleted-list">
+        <ul class="bulleted-list">
           <li>
             My projects: I like to create open code, I need to showcase my
             projects and navigate them from my landing page to those projects.
           </li>
         </ul>
-        <ul id="67e625ac-721d-4852-b0e3-db739afff952" class="bulleted-list">
+        <ul class="bulleted-list">
           <li>
             My thoughts: I have opinions about several topics on the internet.
           </li>
         </ul>
-        <ul id="fa9bf147-19aa-4f2b-9019-1d86c5b1eb03" class="bulleted-list">
+        <ul class="bulleted-list">
           <li>
             My photos: One of my hobbies is photography, which is my more
             sharable way to represent my feelings; I want to showcase them.
           </li>
         </ul>
-        <ul id="4f44f61d-c6db-4441-b1d8-b8eb901e996e" class="bulleted-list">
+        <ul class="bulleted-list">
           <li>
             A way to contact: I have different social networks with other
             objectives. The users of my web page should be able to find those
             social networks and navigate to them.
           </li>
         </ul>
-        <h1 id="c52805e8-e76d-4b9d-b22d-829c8095c97a" class="">Inspirations</h1>
-        <p id="f9d3cb7e-df08-4135-ab2d-79bece331bf0" class="">
+        <h1>Inspirations</h1>
+        <p>
           I don&#x27;t want to overstress a person using my website, I want to
           keep concrete about the thoughts I wish to share, so the principal
           value on the design needs to be <strong
             >minimal and straightforward.</strong
           >
         </p>
-        <p id="370379fd-fd78-4a21-9c44-314f17b4ceca" class="">
+        <p>
           I want to focus the page viewer on the content over impress the people
           with a design guide. The content should be <strong>sober</strong> and
           easy to <strong>read and navigate through</strong>.
         </p>
-        <ol
-          id="33925124-3c9c-4131-8422-4143dabe8502"
-          class="numbered-list"
-          start="1"
-        >
+        <ol>
           <li>
             <a href="http://javier.xyz/">http://javier.xyz/</a> One friend with
             some of the same values as me, but with way more experience and
@@ -883,47 +85,29 @@
             famous for a while.
           </li>
         </ol>
-        <ol
-          id="f049d01c-22c9-459f-becc-5a136cb6d88c"
-          class="numbered-list"
-          start="2"
-        >
+        <ol>
           <li>
             <a href="https://trevordmiller.com/">https://trevordmiller.com/</a>.
             Is a page of an open-source-related guy that has relevant projects
             that I use.
           </li>
         </ol>
-        <ol
-          id="d88cb56b-f10d-4302-be52-28c699301d44"
-          class="numbered-list"
-          start="3"
-        >
+        <ol>
           <li>
             <a href="https://kinduff.com/">https://kinduff.com/</a> A
             ex-coworker whom his page shares most of the same values and
             objectives as me.
           </li>
         </ol>
-        <ol
-          id="9435df5a-110c-4f32-8a02-1d3caecb161c"
-          class="numbered-list"
-          start="4"
-        >
+        <ol>
           <li>
             <a href="http://www.monodigital.studio/en/"
               >http://www.monodigital.studio/en/</a
             > Subtle interactions, minimal and clean design
           </li>
         </ol>
-        <h1 id="144e9081-d62a-455c-b37d-0d3d3cc73fc8" class="">
-          Accessibility
-        </h1>
-        <ol
-          id="43fff0f0-0c53-4e58-96ca-69416ab47d27"
-          class="numbered-list"
-          start="1"
-        >
+        <h1>Accessibility</h1>
+        <ol>
           <li>
             Accessibility needs non-complex flow of control: We need to create
             sites that do not execute complicated behaviors and arrangements; it
@@ -933,11 +117,7 @@
             the devices.
           </li>
         </ol>
-        <ol
-          id="11e0a3be-0284-434b-8839-a3e09bcc7206"
-          class="numbered-list"
-          start="2"
-        >
+        <ol>
           <li>
             Using the semantics of html correctly: By using the tags correctly,
             we give the browser engine information that can be translated easily
@@ -946,23 +126,15 @@
             using navigation tags for navigations, header, footer, Etc.
           </li>
         </ol>
-        <ol
-          id="a0e486e9-97a7-43bc-8d10-71b0d82faa57"
-          class="numbered-list"
-          start="3"
-        >
+        <ol>
           <li>
             Using contrasting colors makes it easier to see the content avoiding
             fatigue or confusion to people with a certain level of visual
             impairment.
           </li>
         </ol>
-        <h1 id="6b93108e-058c-483f-8399-a224d2625498" class="">Usability</h1>
-        <ol
-          id="8d2216e7-c88d-4f3f-a01a-4ddfac366d2f"
-          class="numbered-list"
-          start="1"
-        >
+        <h1>Usability</h1>
+        <ol>
           <li>
             Re-used navigation components: The header and footer components
             contain the main links you need to go over the different pages.
@@ -971,11 +143,7 @@
             navigate through the application.
           </li>
         </ol>
-        <ol
-          id="3326e389-05a3-44f4-8d6e-0def48799486"
-          class="numbered-list"
-          start="2"
-        >
+        <ol>
           <li>
             A large view of what&#x27;s important, the projects: The projects
             page contains all the projects, so the user has a statement with no
@@ -984,11 +152,7 @@
             link redirects the user to the all-projects page.
           </li>
         </ol>
-        <ol
-          id="736bb329-40fa-4f6b-96f6-d1e61073137f"
-          class="numbered-list"
-          start="3"
-        >
+        <ol>
           <li>
             Contact form, the power of simplicity: So many times, we fill a
             complex form with different information that we don&#x27;t know the
@@ -999,14 +163,8 @@
             messaging is clear and reliable to the end-user.
           </li>
         </ol>
-        <h1 id="a5f48a7a-a757-4c41-b193-6cfb76dbb2b8" class="">
-          Things that I learned
-        </h1>
-        <ol
-          id="418f4251-f05f-499f-86ce-3faf186f6767"
-          class="numbered-list"
-          start="1"
-        >
+        <h1>Things that I learned</h1>
+        <ol>
           <li>
             I had to re-learn how to use handlebars: I used handlebars before,
             but it was not the robust project that is today. I needed to learn
@@ -1014,11 +172,7 @@
             continually pre-compile the templates I developed.
           </li>
         </ol>
-        <ol
-          id="b4fd905f-16ca-4fb0-8747-c6d68df92f8b"
-          class="numbered-list"
-          start="2"
-        >
+        <ol>
           <li>
             Responsive design Media queries: I work as a software engineer, but
             in my projects, I don&#x27;t usually spend too much time doing
@@ -1026,11 +180,7 @@
             sizes to handle most of my necessities.
           </li>
         </ol>
-        <ol
-          id="f01eb06d-1a06-41d9-8866-961bf59421d4"
-          class="numbered-list"
-          start="3"
-        >
+        <ol>
           <li>
             The &lt;template/&gt; tag and outherHtml: To ingest handlebars
             templates in the cleanest way, I remembered that the template tag is
@@ -1040,11 +190,7 @@
             which overrides the DOM template node.
           </li>
         </ol>
-        <ol
-          id="7072cbc8-bf4d-42b0-a71a-de3746e8fb30"
-          class="numbered-list"
-          start="4"
-        >
+        <ol>
           <li>
             If you have a component with specific with when you add padding,
             this width increases. I broke most of my layout thinking that
@@ -1054,10 +200,8 @@
             paddingSum)
           </li>
         </ol>
-        <h1 id="2bb43f1f-fe5d-4c1c-ac48-8e2eafe0eff0" class="">
-          What worked well
-        </h1>
-        <ul id="3fe79e82-843a-4bae-a6ef-5aa87cd12596" class="bulleted-list">
+        <h1>What worked well</h1>
+        <ul class="bulleted-list">
           <li>
             One of the issues of writing plain JavaScript is the separation of
             scripts, so you don&#x27;t end up writing all your code in one
@@ -1069,11 +213,7 @@
             separation:
           </li>
         </ul>
-        <ol
-          id="051c9706-3d58-4fb2-9e84-7011bb79824f"
-          class="numbered-list"
-          start="1"
-        >
+        <ol>
           <li>
             Create a helper script/module that exports to window.helpers and
             handlebars the utility functions. One example is the renderTemplate
@@ -1081,18 +221,10 @@
             handlebars and render it in a template.
           </li>
         </ol>
-        <ol
-          id="c70d307c-ec22-4606-ab00-a69592721ceb"
-          class="numbered-list"
-          start="2"
-        >
+        <ol>
           <li>Create a data module that exports to window.data</li>
         </ol>
-        <ol
-          id="a2838475-e67f-4d6e-b231-c121b6bdee17"
-          class="numbered-list"
-          start="3"
-        >
+        <ol>
           <li>
             All scripts are executed in an IFFE (immediately invoked function
             expression) so any variable declared belongs to the IFFE scope, and
@@ -1100,14 +232,14 @@
             using a common window pattern.
           </li>
         </ol>
-        <ul id="89fc2413-b978-4e2d-9bed-f56bb492dfda" class="bulleted-list">
+        <ul class="bulleted-list">
           <li>
             Fetching the projects&#x27; readme from GitHub: This option
             simplified the implementation of multiple posts re-using the openly
             available readme information.
           </li>
         </ul>
-        <ul id="173d37e6-7cd2-4c42-aedf-99797a4028e2" class="bulleted-list">
+        <ul class="bulleted-list">
           <li>
             BEM: This is a naming convention for writing CSS that I learned a
             couple of years ago. It separates the creation of the classes into
@@ -1116,7 +248,7 @@
             is a modification to any block or element style.
           </li>
         </ul>
-        <ul id="352a8891-5b23-4f1c-88a0-1a4e88718173" class="bulleted-list">
+        <ul class="bulleted-list">
           <li>
             Using node + npm to use development utils: I used the handlebars CLI
             and parcel to having an environment able to reload my changes
@@ -1124,10 +256,8 @@
             developing faster.
           </li>
         </ul>
-        <h1 id="3713a4a3-fe66-4ffc-a7b1-44d5625f5171" class="">
-          What aspect of the work could be improved
-        </h1>
-        <ul id="f4bd2fba-2bd3-415d-8713-a4f396556c4f" class="bulleted-list">
+        <h1>What aspect of the work could be improved</h1>
+        <ul class="bulleted-list">
           <li>
             Mobile-first makes media queries less complicated: I started to code
             the site using a desktop as the base, then started with mobile, and
@@ -1141,7 +271,7 @@
             not perform the refactoring on time for this submission.
           </li>
         </ul>
-        <ul id="c95b0e48-cf89-4ec0-be53-a8706c503e43" class="bulleted-list">
+        <ul class="bulleted-list">
           <li>
             Handlebars is an excellent library, but it kills the SEO: The search
             engine optimization doesn&#x27;t execute javascript in most cases,
@@ -1150,7 +280,7 @@
             engines.
           </li>
         </ul>
-        <ul id="20fb7938-e685-4d72-9858-33d825ce06cf" class="bulleted-list">
+        <ul class="bulleted-list">
           <li>
             Lazy load of images: I managed to create a great photo grid, but my
             image takes too long to load and for a second feels like the
@@ -1161,10 +291,8 @@
             the grid.
           </li>
         </ul>
-        <h1 id="ec978673-2744-4a72-a782-34002df2f4d7" class="">
-          Libraries and resources used
-        </h1>
-        <ul id="a69f9bfe-1076-4c98-9695-3cfb4616db04" class="bulleted-list">
+        <h1>Libraries and resources used</h1>
+        <ul class="bulleted-list">
           <li>
             Handlebars runtime[1], used for filling my handlebars template with
             data. <a href="https://handlebarsjs.com/api-reference/runtime.html"
@@ -1172,7 +300,7 @@
             >
           </li>
         </ul>
-        <ul id="5042b59b-7ca9-4744-bfb5-56951a2e6b15" class="bulleted-list">
+        <ul class="bulleted-list">
           <li>
             Handlebars CLI [2] used to precompilation my handlebars
             templates. <a
@@ -1181,7 +309,7 @@
             >
           </li>
         </ul>
-        <ul id="8889ad0f-b6b4-4642-a4d4-94ae25109d46" class="bulleted-list">
+        <ul class="bulleted-list">
           <li>
             Sowdown [3], used to convert markdown to HTML in runtime: <a
               href="http://showdownjs.com/"
@@ -1189,7 +317,7 @@
             >
           </li>
         </ul>
-        <ul id="0df0b1c0-bf76-4713-8dee-c5ee89ae66a6" class="bulleted-list">
+        <ul class="bulleted-list">
           <li>
             Github markdown CSS [4], used as base styling for the HTML created
             by the markdown with a typical style: <a
@@ -1200,7 +328,7 @@
             >
           </li>
         </ul>
-        <ul id="ec000bc8-6cd6-481e-94ad-2799481fc78a" class="bulleted-list">
+        <ul class="bulleted-list">
           <li>
             AOS [5], used for creating animations when the user scrolls to a
             component: <a href="https://michalsnik.github.io/aos/"
@@ -1208,7 +336,7 @@
             >
           </li>
         </ul>
-        <ul id="b23eb290-7c9b-4e9b-893c-b5f26158df0b" class="bulleted-list">
+        <ul class="bulleted-list">
           <li>
             Css-trics [6], Adaptative photo layout [ 1 ], I based my photo
             gallery on this adaptative layout, but I performed changes to
@@ -1219,7 +347,7 @@
             >.
           </li>
         </ul>
-        <ul id="a3a53193-7518-47c3-a975-aa7284184c71" class="bulleted-list">
+        <ul class="bulleted-list">
           <li>
             Code-pen, force image ratio 1:1, I used a piece of code from this
             code-pen to force my images to be squared with no need to edit them,
@@ -1230,41 +358,41 @@
             >
           </li>
         </ul>
-        <h1 id="6e7de9e5-f04b-4d18-a421-0731e67f10bc" class="">SiteMap</h1>
-        <p id="a0a06309-d8c0-43ff-bbc4-7fabe19c69bb" class=""></p>
-        <p id="577f7137-91d2-44f5-b821-883c358ef664" class=""></p>
-        <figure id="d944cbe5-f1fa-4778-90cd-40e627117862" class="image">
+        <h1>SiteMap</h1>
+        <p></p>
+        <p></p>
+        <figure class="image">
           <a href="public/report/Untitled.png"
             ><img style="width: 1590px" src="public/report/Untitled.png"
           /></a>
         </figure>
-        <p id="f1bc647b-de6a-4bd5-b933-3f107def8c17" class=""></p>
-        <h1 id="981ae00f-a9ab-4f2f-9f63-c40e2b4c236f" class="">Wireframes</h1>
-        <p id="381ad21b-315e-4299-9a8d-31ae9e80cac1" class=""></p>
-        <figure id="56d5f388-ccc5-4188-b690-73e13ddd245d" class="image">
+        <p></p>
+        <h1>Wireframes</h1>
+        <p></p>
+        <figure class="image">
           <a href="public/report/Untitled%201.png"
             ><img style="width: 4440px" src="public/report/Untitled%201.png"
           /></a>
         </figure>
-        <p id="3fd35d63-65f6-4ab2-885b-18696a84ef13" class=""></p>
-        <h1 id="b61288d7-4a45-4bbc-8444-e12fdd4dd0dc" class="">Mockups</h1>
-        <p id="855b5c1c-d79b-4a99-8738-8449243054aa" class=""></p>
-        <h2 id="c0a01a41-1ed9-40d3-8bcf-69e57f33c234" class="">Index</h2>
-        <figure id="4b013b1c-038f-4e5c-b4ba-aa826fc41cdd" class="image">
+        <p></p>
+        <h1>Mockups</h1>
+        <p></p>
+        <h2>Index</h2>
+        <figure class="image">
           <a href="public/report/Untitled%202.png"
             ><img style="width: 1720px" src="public/report/Untitled%202.png"
           /></a>
         </figure>
-        <p id="219ebc09-7efd-4ccd-9803-cd4af03f2eef" class=""></p>
-        <h2 id="d40767b8-f9e4-4425-83ac-2dd0e50bcab5" class="">Projects</h2>
-        <figure id="921011d4-bc8d-4182-ab14-8e7149e13157" class="image">
+        <p></p>
+        <h2>Projects</h2>
+        <figure class="image">
           <a href="public/report/Untitled%203.png"
             ><img style="width: 1720px" src="public/report/Untitled%203.png"
           /></a>
         </figure>
-        <h2 id="e0ccae24-dae4-4b60-8350-50e9e3393b26" class="">Projects</h2>
-        <p id="1ac2d8ea-dc83-4282-b9a9-f51cf4708bc2" class=""></p>
-        <figure id="635a8e86-0232-4430-95c8-655e92dc8cf1" class="image">
+        <h2>Projects</h2>
+        <p></p>
+        <figure class="image">
           <a
             href="public/report/screencapture-sharedskpqkcjp-coursera-apps-org-photos-html-2020-09-21-03_44_36.png"
             ><img
@@ -1272,26 +400,24 @@
               src="public/report/screencapture-sharedskpqkcjp-coursera-apps-org-photos-html-2020-09-21-03_44_36.png"
           /></a>
         </figure>
-        <p id="410c6656-a15b-4983-a815-445767af33c8" class=""></p>
-        <h2 id="21997942-7c3d-4dbd-9493-1b41222726d4" class="">Contact</h2>
-        <figure id="6868a477-5096-4bda-8112-8466e12b7476" class="image">
+        <p></p>
+        <h2>Contact</h2>
+        <figure class="image">
           <a href="public/report/Untitled%204.png"
             ><img style="width: 1720px" src="public/report/Untitled%204.png"
           /></a>
         </figure>
-        <p id="5116ba26-5521-4bc8-80bb-06c728b5c17c" class=""></p>
-        <h2 id="f048887a-03b8-48e0-a013-f22c180ec540" class="">
-          Project Details
-        </h2>
-        <figure id="8141d881-30d1-4cd0-a76d-f9eb8e368fb4" class="image">
+        <p></p>
+        <h2>Project Details</h2>
+        <figure class="image">
           <a href="public/report/Untitled%205.png"
             ><img style="width: 1720px" src="public/report/Untitled%205.png"
           /></a>
         </figure>
-        <p id="18f1c27f-5308-4eb7-8b7f-8eb91be8c201" class=""></p>
-        <h1 id="eae5ac92-6038-4ad7-a9c3-49f7345229c9" class="">Citations</h1>
-        <p id="545a254b-74f6-43ae-b671-1eac4bd35237" class=""></p>
-        <ul id="0be72437-b098-4973-b928-d27bf5ecd38a" class="bulleted-list">
+        <p></p>
+        <h1>Citations</h1>
+        <p></p>
+        <ul class="bulleted-list">
           <li>
             [1] <a href="http://handlebarsjs.com/">Handlebarsjs.com</a>,
             &#x27;The Handlebars runtime&#x27;, 2020 [Online]. Available:
@@ -1300,7 +426,7 @@
             >. [Accessed: 21- Sep- 2020].
           </li>
         </ul>
-        <ul id="7eef0080-3082-40ee-85a4-de1f158deb3d" class="bulleted-list">
+        <ul class="bulleted-list">
           <li>
             [2] <a href="http://handlebarsjs.com/">Handlebarsjs.com</a>,
             &#x27;Precompiling templates&#x27;, 2019 [Online]. Available:
@@ -1311,7 +437,7 @@
             [Accessed: 21- Sep- 2020].
           </li>
         </ul>
-        <ul id="c515758e-363d-45d4-8851-b28260f6a17c" class="bulleted-list">
+        <ul class="bulleted-list">
           <li>
             [3] Showdownjs, &#x27;showdown&#x27; (commit a9f38b6), 2019. [Source
             code].
@@ -1320,7 +446,7 @@
             >
           </li>
         </ul>
-        <ul id="dbd88533-37d8-478a-b2c4-7d32c2743cad" class="bulleted-list">
+        <ul class="bulleted-list">
           <li>
             [4] S, Sorhus, &#x27;github-markdown-css&#x27; (commit 1485dd7),
             2020, [Source Code]. <a
@@ -1329,7 +455,7 @@
             >. 
           </li>
         </ul>
-        <ul id="227b5832-567a-4dd7-8548-2e78b7782a26" class="bulleted-list">
+        <ul class="bulleted-list">
           <li>
             [5] Michal, Sajnóg, &#x27;aos&#x27; (commit 329fb34), 2018. [Source
             code].
@@ -1338,7 +464,7 @@
             >.
           </li>
         </ul>
-        <ul id="f53ef8d3-0b50-4c75-bae9-519b0389133d" class="bulleted-list">
+        <ul class="bulleted-list">
           <li>
             [6] T. Van Damme, &#x27;Adaptive Photo Layout w&#x27;ith
             Flexbox&#x27;, 2019. [Online]. Available:
