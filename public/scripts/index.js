@@ -7,7 +7,7 @@
     });
 
     AOS.init({
-      offset: 500,
+      offset: 200,
     });
   }
 
