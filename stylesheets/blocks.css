@@ -277,6 +277,18 @@
   object-fit: cover;
 }
 
+.gtx-markdown *:is(h1, h2, h3, h4, h5, h6) {
+  font-family: "Oswald";
+}
+
+.gtx-markdown *:is(pre, code, a, p, em) {
+  font-family: "Space Mono";
+}
+
+.gtx-markdown *:is(a) {
+  color: #5d3ef7 !important;
+}
+
 /* Mobile queries */
 @media only screen and (min-width: 320px) and (max-width: 479px) {
   /* gtx-section:mobile */
