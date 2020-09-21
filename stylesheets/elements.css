@@ -44,6 +44,7 @@
   --main
   --hightlight
   --right
+  --dark
 */
 .gtx-text {
   font-weight: 300;
@@ -51,6 +52,10 @@
   font-family: "Space Mono";
   font-size: 1.2em;
   color: white;
+}
+
+.gtx-text--dark {
+  color: #1b133c;
 }
 
 .gtx-text--main {
@@ -75,7 +80,21 @@
 
 .gtx-isotype {
   max-height: 5em;
-  opacity: ;
+}
+
+/* gtx-button */
+.gtx-button {
+  background-color: #5d3ef7;
+  color: white;
+  text-align: center;
+  padding: 10px 5px;
+  cursor: pointer;
+}
+
+.gtx-button:hover {
+  background-color: #4e3ef7;
+  transition: color 200ms;
+  transition-timing-function: ease;
 }
 
 /* Mobile queries */
@@ -96,7 +115,7 @@
     max-height: 3em;
   }
 
-  /* gtx-isotype */
+  /* gtx-isotype:mobile */
 
   .gtx-isotype {
     max-height: 3em;

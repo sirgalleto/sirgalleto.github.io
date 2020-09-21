@@ -92,27 +92,29 @@
   list-style-type: none;
 }
 
+.gtx-navbar__options li {
+  margin: 0 22px 0 22px;
+}
+
 .gtx-navbar__options li > a {
-  margin: 5px;
   font-size: 1em;
   color: rgb(26, 18, 58);
   font-family: "Space mono";
   font-weight: 700;
   text-decoration: none;
-  margin: 0 22px 0 22px;
 }
 
-.gtx-navbar__options li > a:first-child {
+.gtx-navbar__options li:first-child {
   margin-left: 0;
 }
 
-.gtx-navbar__options li:last-child > a {
+.gtx-navbar__options li:last-child {
   margin-right: 0;
 }
 
 .gtx-navbar__options li > a:hover {
   color: white;
-  text-decoration: underline overline;
+  text-decoration: underline;
 }
 
 .gtx-navbar__options li > a:visited {

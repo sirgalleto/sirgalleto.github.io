@@ -38,3 +38,7 @@
 .gtx-relative {
   position: relative;
 }
+
+.gtx-separator {
+  margin-top: 20px;
+}
