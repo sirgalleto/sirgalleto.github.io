@@ -68,13 +68,14 @@
 
 /* gtx-logo */
 .gtx-logo {
-  max-height: 68px;
+  max-height: 4em;
 }
 
 /* gtx-isotype */
 
 .gtx-isotype {
-  max-height: 85px;
+  max-height: 5em;
+  opacity: ;
 }
 
 /* Mobile queries */
@@ -85,7 +86,20 @@
     max-width: 90%;
   }
 
+  /* gtx-text:mobile */
   .gtx-text--main {
     max-width: 100%;
+  }
+
+  /* gtx-logo:mobile */
+  .gtx-logo {
+    max-height: 3em;
+  }
+
+  /* gtx-isotype */
+
+  .gtx-isotype {
+    max-height: 3em;
+    opacity: 0.5;
   }
 }
