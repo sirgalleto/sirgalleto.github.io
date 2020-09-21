@@ -406,7 +406,7 @@
     margin-right: 0;
   }
 
-  /* gtx-photo-grid */
+  /* gtx-photo-grid:mobile */
   .gtx-photo-grid li {
     padding: 5px;
     max-width: 100%;
@@ -494,6 +494,19 @@
     font-size: 2em;
     line-height: 1.2em;
     width: 100%;
+  }
+
+  /* gtx-photo-grid:tablet */
+  .gtx-photo-grid li {
+    padding: 5px;
+    max-width: 100%;
+    height: fit-content;
+  }
+
+  .gtx-photo-grid img {
+    height: auto;
+    width: 100%;
+    object-fit: contain;
   }
 }
 
