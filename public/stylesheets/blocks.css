@@ -348,6 +348,10 @@
     justify-content: space-between;
   }
 
+  .gtx-navbar__options li {
+    margin: 0 10px 0 10px;
+  }
+
   .gtx-navbar--footer__container {
     align-items: flex-end;
   }
@@ -426,8 +430,10 @@
 /* Mobile portrait + tablet queries */
 @media only screen and (min-width: 480px) and (max-width: 991px) {
   /* gtx-section:tablet */
-  .gtx-section > * {
+  .gtx-section {
     width: calc(100% - 80px);
+    padding-left: 40px;
+    padding-right: 40px;
   }
 
   .gtx-section--primary {

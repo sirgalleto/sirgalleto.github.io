@@ -82,6 +82,7 @@
 
 .gtx-isotype {
   max-height: 5em;
+  height: auto;
 }
 
 /* gtx-button */
