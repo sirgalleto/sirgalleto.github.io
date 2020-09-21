@@ -32,6 +32,8 @@ a {
 
 a:hover {
   color: white;
+  transition: color 700ms;
+  transition-timing-function: ease;
 }
 
 a::visited {
