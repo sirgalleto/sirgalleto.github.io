@@ -6,6 +6,8 @@
     window.helpers.renderTemplate("footer", "footer");
 
     const projectName = window.helpers.getUrlParam("project");
+    // Set tab/window title so the user gets the current context
+    document.title = "Galleto - " + projectName;
     const currentProject = window.data.projects.find(
       ({ name }) => name === projectName
     );
