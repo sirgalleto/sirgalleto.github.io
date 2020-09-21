@@ -15,9 +15,7 @@
     const element = document.getElementById(id);
 
     if (!element) {
-      console.warn(
-        `Element with id ${id} does not exist in the handlebars context`
-      );
+      console.warn(`Element with id ${id} does not exist in the document`);
       return;
     }
 
