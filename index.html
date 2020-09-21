@@ -1,3 +1,4 @@
+<!-- Libraries: Handlebars, AOS -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,6 +20,7 @@
   </head>
   <body>
     <section class="gtx-section gtx-section--primary">
+      <!-- Header template -->
       <template id="header"></template>
       <div class="gtx-intro">
         <h1 class="gtx-title gtx-title--main" data-aos="fade-right">
@@ -34,16 +36,19 @@
     </section>
     <section class="gtx-section gtx-section--primary">
       <h1 class="gtx-title">Recent projects <a href="projects.html">All</a></h1>
+      <!-- Project template, should render 3 projects -->
       <template id="recent-projects"></template>
     </section>
 
     <section class="gtx-section gtx-section--secondary gtx-section--overflow">
       <h1 class="gtx-title">Lattest Instagrams</h1>
 
+      <!-- Description of instagram -->
       <quote class="gtx-title gtx-title--quote">
         Photography, travel & code.
       </quote>
 
+      <!-- 2 instagram grids -->
       <div class="gtx-flex-container">
         <div class="gtx-instagram-grid">
           <a
@@ -119,6 +124,7 @@
       </div>
     </section>
 
+    <!-- Footer template -->
     <template id="footer"></template>
   </body>
 </html>

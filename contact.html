@@ -1,3 +1,4 @@
+<!-- Libraries: Handlebars -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,6 +17,7 @@
   </head>
   <body>
     <section class="gtx-section gtx-section--primary">
+      <!-- Header template -->
       <template id="header"></template>
     </section>
     <section class="gtx-section">
@@ -27,15 +29,18 @@
           <a href="https://twitter.com/sirgalleto">@sirgalleto</a> or just write
           me:
         </span>
+        <!-- Everytime it changes, updates the mailto of the anchor -->
         <textarea
           id="message"
           cols="30"
           rows="10"
           class="gtx-input gtx-separator"
         ></textarea>
+        <!-- Is an anchor with a mail:to generated in the script -->
         <a id="send" class="gtx-button" role="button">Submit</a>
       </form>
     </section>
+    <!-- Footer template -->
     <template id="footer"></template>
   </body>
 </html>

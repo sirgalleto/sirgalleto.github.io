@@ -19,7 +19,7 @@ body {
   }
 }
 
-/* https://css-tricks.com/almanac/properties/s/scrollbar/ */
+/* Remove scrollbar (at least from webkit) */
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent;

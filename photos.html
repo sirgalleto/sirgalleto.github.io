@@ -1,3 +1,4 @@
+<!-- Libraries: Handlebars, AOS -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,10 +19,12 @@
   </head>
   <body>
     <section class="gtx-section gtx-section--primary">
+      <!-- Header template -->
       <template id="header"></template>
     </section>
     <section class="gtx-section gtx-section--overflow gtx-photo-grid">
       <h1 class="gtx-title">Photo Gallery</h1>
+      <!-- Photos could be done in a template, but takes the same effort maintain a list of photos than the html -->
       <ul>
         <li>
           <img
@@ -101,6 +104,7 @@
         </li>
       </ul>
     </section>
+    <!-- Footer template -->
     <template id="footer"></template>
   </body>
 </html>
