@@ -24,9 +24,12 @@
       [[]]
     );
 
-    console.log("__: start -> projectsSection", projectsSection);
     window.helpers.renderTemplate("projects", "allProjects", {
       projectsSection,
+    });
+
+    AOS.init({
+      offset: 800,
     });
   }
 

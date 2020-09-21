@@ -21,7 +21,7 @@ templates['allProjects'] = template({"1":function(container,depth0,helpers,parti
 
   return "      <a class=\"gtx-project-box\" href=\"project.html?project="
     + alias4(((helper = (helper = lookupProperty(helpers,"name") || (depth0 != null ? lookupProperty(depth0,"name") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data,"loc":{"start":{"line":4,"column":60},"end":{"line":4,"column":68}}}) : helper)))
-    + "\">\n        <aside class=\"gtx-project-box__index\">/ "
+    + "\" data-aos=\"fade-up\">\n        <aside class=\"gtx-project-box__index\">/ "
     + alias4((lookupProperty(helpers,"increment")||(depth0 && lookupProperty(depth0,"increment"))||alias2).call(alias1,(depth0 != null ? lookupProperty(depth0,"index") : depth0),{"name":"increment","hash":{},"data":data,"loc":{"start":{"line":5,"column":48},"end":{"line":5,"column":67}}}))
     + "</aside>\n        <span class=\"gtx-project-box__tag\">"
     + alias4(((helper = (helper = lookupProperty(helpers,"type") || (depth0 != null ? lookupProperty(depth0,"type") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"type","hash":{},"data":data,"loc":{"start":{"line":6,"column":43},"end":{"line":6,"column":51}}}) : helper)))
@@ -68,7 +68,7 @@ templates['projectsPreview'] = template({"1":function(container,depth0,helpers,p
 
   return "    <a class=\"gtx-project-box\" href=\"project.html?project="
     + alias4(((helper = (helper = lookupProperty(helpers,"name") || (depth0 != null ? lookupProperty(depth0,"name") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data,"loc":{"start":{"line":3,"column":58},"end":{"line":3,"column":66}}}) : helper)))
-    + "\">\n      <aside class=\"gtx-project-box__index\">/ "
+    + "\" data-aos=\"fade-up\">\n      <aside class=\"gtx-project-box__index\">/ "
     + alias4((lookupProperty(helpers,"increment")||(depth0 && lookupProperty(depth0,"increment"))||alias2).call(alias1,(data && lookupProperty(data,"index")),{"name":"increment","hash":{},"data":data,"loc":{"start":{"line":4,"column":46},"end":{"line":4,"column":66}}}))
     + "</aside>\n      <span class=\"gtx-project-box__tag\">"
     + alias4(((helper = (helper = lookupProperty(helpers,"type") || (depth0 != null ? lookupProperty(depth0,"type") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"type","hash":{},"data":data,"loc":{"start":{"line":5,"column":41},"end":{"line":5,"column":49}}}) : helper)))

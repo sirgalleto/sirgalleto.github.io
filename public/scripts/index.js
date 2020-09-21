@@ -5,6 +5,10 @@
     window.helpers.renderTemplate("recent-projects", "projectsPreview", {
       projects: window.helpers.pickFirstThree(window.data.projects),
     });
+
+    AOS.init({
+      offset: 500,
+    });
   }
 
   window.onload = start;
