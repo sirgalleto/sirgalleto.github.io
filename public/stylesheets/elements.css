@@ -8,7 +8,7 @@
 .gtx-title {
   margin-bottom: 38px;
   font-weight: 700;
-  font-family: "Space mono";
+  font-family: "Space Mono";
   text-transform: uppercase;
 }
 
@@ -95,6 +95,13 @@
   background-color: #4e3ef7;
   transition: color 200ms;
   transition-timing-function: ease;
+}
+
+/* gtx-input */
+
+.gtx-input {
+  font-family: "Space Mono";
+  padding: 5px;
 }
 
 /* Mobile queries */
