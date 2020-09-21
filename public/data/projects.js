@@ -17,7 +17,40 @@ const projects = `[
     "type": "Twitter Bot",
     "readme": "https://raw.githubusercontent.com/sirgalleto/navajitasbot/master/README.md",
     "githubUrl": "https://github.com/sirgalleto/navajitasbot"
+  },
+  {
+    "name": "Como ayudar",
+    "type": "WEB - Collaboration",
+    "readme": "https://raw.githubusercontent.com/eldelentes/comoayudarmx/master/README.md",
+    "githubUrl": "https://github.com/eldelentes/comoayudarmx"
+  },
+  {
+    "name": "crypto-notifier",
+    "type": "CLI",
+    "readme": "https://raw.githubusercontent.com/sirgalleto/crypto-notifier/master/README.md",
+    "githubUrl": "https://github.com/sirgalleto/crypto-notifier"
+  },
+  {
+    "name": "map-location",
+    "type": "WEB",
+    "readme": "https://raw.githubusercontent.com/sirgalleto/map-location/master/README.md",
+    "githubUrl": "https://github.com/sirgalleto/map-location"
+  },
+  {
+    "name": "node-ping-server",
+    "type": "node",
+    "readme": "https://raw.githubusercontent.com/sirgalleto/node-ping-server/master/README.md",
+    "githubUrl": "https://github.com/sirgalleto/node-ping-server"
+  },
+  {
+    "name": "hue-screen-ambiance",
+    "type": "node",
+    "readme": "https://raw.githubusercontent.com/sirgalleto/hue-screen-ambiance/master/README.md",
+    "githubUrl": "https://github.com/sirgalleto/hue-screen-ambiance"
   }
 ]`;
 
-window.projects = JSON.parse(projects);
+window.data = {
+  ...window.data,
+  projects: JSON.parse(projects),
+};

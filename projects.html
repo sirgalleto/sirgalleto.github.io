@@ -3,7 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects</title>
+    <title>Galleto - Project</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;600&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./stylesheets/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.runtime.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
+    <script src="public/templates/templates.precompiled.js"></script>
+    <script type="text/javascript" src="public/data/projects.js"></script>
+    <script type="text/javascript" src="public/scripts/helpers.js"></script>
+    <script type="text/javascript" src="public/scripts/projects.js"></script>
   </head>
-  <body></body>
+  <body>
+    <section class="gtx-section gtx-section--primary gtx-section--small">
+      <template id="header"></template>
+    </section>
+    <section class="gtx-section gtx-section--primary">
+      <h1 class="gtx-title">Projects</h1>
+      <template id="projects"></template>
+    </section>
+    <template id="footer"></template>
+  </body>
 </html>

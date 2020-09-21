@@ -6,7 +6,7 @@
     window.helpers.renderTemplate("footer", "footer");
 
     const projectName = window.helpers.getUrlParam("project");
-    const currentProject = window.projects.find(
+    const currentProject = window.data.projects.find(
       ({ name }) => name === projectName
     );
 

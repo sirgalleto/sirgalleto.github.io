@@ -1,0 +1,11 @@
+{{#each projectsSection}}
+  <div class="gtx-project-box__container">
+    {{#each this }}
+      <a class="gtx-project-box" href="project.html?project={{name}}">
+        <aside class="gtx-project-box__index">/ {{increment index}}</aside>
+        <span class="gtx-project-box__tag">{{type}}</span>
+        <h2 class="gtx-project-box__title">{{name}}</h2>
+      </a>
+    {{/each}}
+  </div>
+{{/each}}
