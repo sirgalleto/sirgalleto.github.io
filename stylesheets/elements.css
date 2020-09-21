@@ -54,7 +54,7 @@
 }
 
 .gtx-text--main {
-  width: 40%;
+  max-width: 40%;
 }
 
 .gtx-text--right {
@@ -75,4 +75,17 @@
 
 .gtx-isotype {
   max-height: 85px;
+}
+
+/* Mobile queries */
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+  /* gtx-title:mobile */
+  .gtx-title--main {
+    font-size: 3em;
+    max-width: 90%;
+  }
+
+  .gtx-text--main {
+    max-width: 100%;
+  }
 }

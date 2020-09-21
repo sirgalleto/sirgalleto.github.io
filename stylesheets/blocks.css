@@ -110,6 +110,10 @@
   margin-left: 0;
 }
 
+.gtx-navbar__options li:last-child > a {
+  margin-right: 0;
+}
+
 .gtx-navbar__options li > a:hover {
   color: white;
   text-decoration: underline overline;
@@ -173,8 +177,6 @@
   margin-right: 45px;
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-bottom: solid 18px white;
-  /* TODO: use this as anchor */
-  cursor: pointer;
 }
 
 .gtx-project-box:hover {
@@ -273,4 +275,107 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Mobile queries */
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+  /* gtx-section:mobile */
+  .gtx-section > * {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .gtx-section--primary {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .gtx-section--footer {
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    height: 300px;
+  }
+
+  .gtx-section--overflow + .gtx-section {
+    margin-top: -300px;
+    padding-top: 100px;
+  }
+
+  /* gtx-navbar:mobile */
+  .gtx-navbar {
+    height: 68px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .gtx-navbar--footer__container {
+    align-items: flex-end;
+  }
+
+  .gtx-navbar--footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: fit-content;
+  }
+
+  .gtx-navbar--footer > .gtx-navbar__options {
+    align-items: flex-end;
+  }
+
+  /* gtx-intro:mobile */
+  .gtx-intro {
+    justify-content: space-around;
+    padding-top: 50px;
+    flex-direction: column;
+    height: 60vh;
+  }
+
+  /* gtx-project-box:mobile */
+
+  .gtx-project-box {
+    flex: 1 1 80%;
+    margin: auto !important;
+    width: 80%;
+    margin-top: 50px !important;
+  }
+
+  .gtx-project-box__container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* .gtx-photo-grid:mobile */
+  .gtx-photo-grid {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .gtx-photo-grid:first-child {
+    margin-right: 5px;
+  }
+
+  /* Hacky trick from https://codepen.io/ItScofield/pen/PNVZoQ */
+  .gtx-photo-grid__square {
+    flex: 1 1 calc(50% - 5px);
+    max-width: calc(50% - 5px);
+    position: relative;
+    margin-top: 5px;
+  }
+
+  .gtx-photo-grid__square--full {
+    flex: 1 1 100%;
+    max-width: none;
+    margin-right: 0;
+  }
+}
+
+/* Wide+ screens */
+@media only screen and (min-width: 1920px) {
+  .gtx-section > * {
+    margin-left: calc(25vw);
+    margin-right: calc(25vw);
+  }
 }
