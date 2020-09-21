@@ -1,5 +1,6 @@
 // Store large JSONs as string and parse them in runtime ends in a better performance, ref: https://v8.dev/blog/cost-of-javascript-2019#json
-const projects = `[
+(function () {
+  const projects = `[
   {
     "name": "memory-usage-webpack-plugin",
     "type": "Webpack Plugin",
@@ -50,7 +51,8 @@ const projects = `[
   }
 ]`;
 
-window.data = {
-  ...window.data,
-  projects: JSON.parse(projects),
-};
+  window.data = {
+    ...window.data,
+    projects: JSON.parse(projects),
+  };
+})();
