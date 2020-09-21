@@ -103,3 +103,12 @@
     opacity: 0.5;
   }
 }
+
+/* Mobile portrait + tablet queries */
+@media only screen and (min-width: 480px) and (max-width: 991px) {
+  /* gtx-title:mobile */
+  .gtx-title--main {
+    font-size: 3em;
+    max-width: 32%;
+  }
+}

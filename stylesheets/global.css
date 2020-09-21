@@ -5,25 +5,18 @@ body {
   width: 100vw;
 }
 
+/* Mobile */
 @media only screen and (min-width: 320px) and (max-width: 479px) {
   body {
     font-size: 14px;
   }
 }
 
-@media only screen and (min-width: 480px) and (max-width: 767px) {
+/* Mobile portrait + tablet */
+@media only screen and (min-width: 480px) and (max-width: 991px) {
   body {
     font-size: 14px;
   }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  body {
-    font-size: 14px;
-  }
-}
-
-@media only screen and (min-width: 992px) {
 }
 
 /* https://css-tricks.com/almanac/properties/s/scrollbar/ */
