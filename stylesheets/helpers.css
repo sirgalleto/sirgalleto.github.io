@@ -22,19 +22,6 @@
   flex-direction: column-reverse;
 }
 
-.gtx-unmargin {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.gtx-unmargin--left {
-  margin-left: 0;
-}
-
-.gtx-unmargin--right {
-  margin-right: 0;
-}
-
 .gtx-block {
   display: block;
 }
