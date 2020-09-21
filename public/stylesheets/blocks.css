@@ -521,9 +521,10 @@
 
 /* Wide+ screens */
 @media only screen and (min-width: 1920px) {
-  .gtx-section > * {
-    margin-left: calc(25vw);
-    margin-right: calc(25vw);
+  .gtx-section {
+    width: calc(100% - 50vw);
+    padding-right: 25vw;
+    padding-left: 25vw;
   }
 
   /* .gtx-project-box:tablet */
