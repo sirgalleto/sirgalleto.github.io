@@ -9,30 +9,9 @@
 .gtx-section {
   z-index: 10;
   background-color: transparent;
-  background:
-    /* Hacky implementation: As I didn't find a way to create a sized circle, I created tons of circles so the one with color is an small one */ radial-gradient(
-    circle,
-    rgba(193, 192, 192, 0.4),
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
-    transparent,
+  background: radial-gradient(
+    circle 2px,
+    rgba(193, 192, 192, 0.3) 95%,
     transparent
   );
 
