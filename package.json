@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel *.html --open",
-    "build": "parcel build *.html"
+    "build": "parcel build *.html --out-dir docs"
   },
   "author": "Sebastián Osorio <svzosorio@gmail.com>",
   "license": "ISC",
