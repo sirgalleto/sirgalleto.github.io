@@ -1,17 +1,16 @@
-// Libraries: AOS
+import { renderTemplate, pickFirstThree } from "./helpers";
+import AOS from "aos";
+import projects from "../data/projects.json";
+import "aos/dist/aos.css";
 
-(function () {
-  function start() {
-    window.helpers.renderTemplate("header", "header");
-    window.helpers.renderTemplate("footer", "footer");
-    window.helpers.renderTemplate("recent-projects", "projectsPreview", {
-      projects: window.helpers.pickFirstThree(window.data.projects),
-    });
+function start() {
+  renderTemplate("recent-projects", "projectsPreview", {
+    projects: pickFirstThree(projects),
+  });
 
-    AOS.init({
-      offset: 200,
-    });
-  }
+  AOS.init({
+    offset: 200,
+  });
+}
 
-  window.onload = start;
-})();
+window.onload = start;

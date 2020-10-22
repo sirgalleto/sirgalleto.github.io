@@ -22,13 +22,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="public/stylesheets/index.css" />
-    <link rel="stylesheet" href="public/libs/aos.css" />
-    <script src="public/libs/aos.js"></script>
-    <script src="public/libs/handlebars.runtime.js"></script>
-    <script src="public/templates/templates.precompiled.js"></script>
-    <script src="public/templates/templates.precompiled.js"></script>
-    <script type="text/javascript" src="public/data/projects.js"></script>
-    <script type="text/javascript" src="public/scripts/helpers.js"></script>
     <script type="text/javascript" src="public/scripts/projects.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
@@ -47,7 +40,27 @@
   </head>
   <body>
     <section class="gtx-section gtx-section--primary gtx-section--small">
-      <!-- Header template -->
+      <header>
+        <nav class="gtx-navbar gtx-navbar--primary">
+          <a href="index.html" class="gtx-invisible-anchor">
+            <img src="public/galleto.png" alt="Galleto" class="gtx-logo" />
+          </a>
+          <ul class="gtx-navbar__options">
+            <li>
+              <a href="./projects.html"> Projects</a>
+            </li>
+            <li>
+              <a href="./photos.html"> Photos</a>
+            </li>
+            <li>
+              <a href="./contact.html"> Contact</a>
+            </li>
+            <li>
+              <a href="http://medium.com/@sirgalleto"> Thoughts</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
       <template id="header"></template>
     </section>
     <section class="gtx-section gtx-section--primary">
@@ -55,7 +68,33 @@
       <!-- Projects template: renders all projects -->
       <template id="projects"></template>
     </section>
-    <!-- Footer template -->
-    <template id="footer"></template>
+    <footer class="gtx-section gtx-section--primary gtx-section--footer">
+      <img
+        src="public/galleto-isotype-white.png"
+        alt="Galleto isotype"
+        class="gtx-isotype"
+      />
+      <span class="gtx-text gtx-text--right">
+        © 2020. All rights reserved.Galleto
+      </span>
+      <div
+        class="gtx-flex-container gtx-navbar--footer__container gtx-flex-column"
+      >
+        <span class="gtx-text">Become a friend</span>
+        <nav class="gtx-navbar gtx-navbar--footer">
+          <ul class="gtx-navbar__options">
+            <li>
+              <a href="https://twitter.com/sirgalleto">Twitter</a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/sirgalleto/">Instagram</a>
+            </li>
+            <li>
+              <a href="http://github.com/sirgalleto/"> Github</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
   </body>
 </html>

@@ -1,19 +1,17 @@
-// Libraries: Showdown
+import showdown from "showdown";
+import { getUrlParam, renderTemplate } from "./helpers";
+import projects from "../data/projects.json";
+import "github-markdown-css/github-markdown.css";
 
 (function () {
   const fetch = window.fetch;
 
   function start() {
-    window.helpers.renderTemplate("header", "header");
-    window.helpers.renderTemplate("footer", "footer");
-
-    const projectName = window.helpers.getUrlParam("project");
+    const projectName = getUrlParam("project");
     // Set tab/window title so the user gets the current context
     document.title = "Galleto - " + projectName;
     // Find the project by name using the url's query param name
-    const currentProject = window.data.projects.find(
-      ({ name }) => name === projectName
-    );
+    const currentProject = projects.find(({ name }) => name === projectName);
 
     // Makes an http request to the readme URL
     fetch(currentProject.readme)
@@ -30,7 +28,7 @@
         // Transform the markdown into html
         const html = new showdown.Converter().makeHtml(readme);
 
-        window.helpers.renderTemplate("project-details", "projectDetails", {
+        renderTemplate("project-details", "projectDetails", {
           projectReadme: html,
           project: currentProject,
         });

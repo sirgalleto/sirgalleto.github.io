@@ -22,11 +22,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="public/stylesheets/index.css" />
-    <link href="public/libs/aos.css" rel="stylesheet" />
-    <script src="public/libs/aos.js"></script>
-    <script src="public/libs/handlebars.runtime.js"></script>
-    <script src="public/templates/templates.precompiled.js"></script>
-    <script type="text/javascript" src="public/scripts/helpers.js"></script>
     <script type="text/javascript" src="public/scripts/photos.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
@@ -45,12 +40,30 @@
   </head>
   <body>
     <section class="gtx-section gtx-section--primary">
-      <!-- Header template -->
-      <template id="header"></template>
+      <header>
+        <nav class="gtx-navbar gtx-navbar--primary">
+          <a href="index.html" class="gtx-invisible-anchor">
+            <img src="public/galleto.png" alt="Galleto" class="gtx-logo" />
+          </a>
+          <ul class="gtx-navbar__options">
+            <li>
+              <a href="./projects.html"> Projects</a>
+            </li>
+            <li>
+              <a href="./photos.html"> Photos</a>
+            </li>
+            <li>
+              <a href="./contact.html"> Contact</a>
+            </li>
+            <li>
+              <a href="http://medium.com/@sirgalleto"> Thoughts</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
     </section>
     <section class="gtx-section gtx-section--overflow gtx-photo-grid">
       <h1 class="gtx-title">Photo Gallery</h1>
-      <!-- Photos could be done in a template, but takes the same effort maintain a list of photos than the html -->
       <ul>
         <li>
           <img
@@ -130,7 +143,33 @@
         </li>
       </ul>
     </section>
-    <!-- Footer template -->
-    <template id="footer"></template>
+    <footer class="gtx-section gtx-section--primary gtx-section--footer">
+      <img
+        src="public/galleto-isotype-white.png"
+        alt="Galleto isotype"
+        class="gtx-isotype"
+      />
+      <span class="gtx-text gtx-text--right">
+        © 2020. All rights reserved.Galleto
+      </span>
+      <div
+        class="gtx-flex-container gtx-navbar--footer__container gtx-flex-column"
+      >
+        <span class="gtx-text">Become a friend</span>
+        <nav class="gtx-navbar gtx-navbar--footer">
+          <ul class="gtx-navbar__options">
+            <li>
+              <a href="https://twitter.com/sirgalleto">Twitter</a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/sirgalleto/">Instagram</a>
+            </li>
+            <li>
+              <a href="http://github.com/sirgalleto/"> Github</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
   </body>
 </html>

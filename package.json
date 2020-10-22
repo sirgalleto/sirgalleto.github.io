@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel --host 0.0.0.0 --open *.html",
-    "precompile-templates": "handlebars public/templates/*.handlebars -f public/templates/templates.precompiled.js"
+    "dev": "parcel *.html --open"
   },
   "author": "Sebastián Osorio <svzosorio@gmail.com>",
   "license": "ISC",
@@ -17,12 +16,15 @@
     "pretty-quick": "^3.0.2"
   },
   "dependencies": {
+    "aos": "^2.3.4",
+    "github-markdown-css": "^4.0.0",
     "global.css": "^1.1.0",
-    "handlebars": "^4.7.6"
+    "handlebars": "^4.7.6",
+    "showdown": "^1.9.1"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run precompile-templates && pretty-quick --staged"
+      "pre-commit": "pretty-quick --staged"
     }
   }
 }

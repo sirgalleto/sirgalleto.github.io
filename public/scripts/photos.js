@@ -1,12 +1,8 @@
-// Libraries: AOS
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-(function () {
-  function start() {
-    window.helpers.renderTemplate("header", "header");
-    window.helpers.renderTemplate("footer", "footer");
+function start() {
+  AOS.init();
+}
 
-    AOS.init();
-  }
-
-  window.onload = start;
-})();
+window.onload = start;
