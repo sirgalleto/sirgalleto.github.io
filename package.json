@@ -17,8 +17,11 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
+    "github-markdown": "^3.2.0",
+    "github-markdown-css": "^4.0.0",
     "global.css": "^1.1.0",
-    "handlebars": "^4.7.6"
+    "handlebars": "^4.7.6",
+    "showdown": "^1.9.1"
   },
   "husky": {
     "hooks": {
